@@ -1,8 +1,5 @@
 FROM nvidia/cuda:11.2.2-runtime-ubuntu20.04
 
-RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     ca-certificates \
