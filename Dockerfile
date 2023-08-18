@@ -9,3 +9,7 @@ RUN conda install -y pytorch cudatoolkit=11.3 -c pytorch && pip3 install --no-ca
 RUN conda install pytorch==1.12.1 cudatoolkit=11.3 -c pytorch -y
 
 WORKDIR /nfs
+
+ENV JAVA_HOME="/nfs/java/jdk-11.0.1"
+
+RUN pip uninstall -y neptune-client && pip install -U neptune pyserini pytorch-lightning
