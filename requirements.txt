@@ -10,7 +10,7 @@ google-cloud
 gsutil
 requests
 pygaggle
-pyserini==0.16
+pyserini
 faiss-cpu
 faiss-gpu
 openai
