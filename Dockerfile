@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
+FROM hitt08/ubuntu-py:gpu_cuda11
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
