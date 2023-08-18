@@ -8,7 +8,7 @@ wikipedia
 gensim
 google-cloud
 gsutil
-requests -U
+requests
 pyserini==0.16
 faiss-cpu
 faiss-gpu
