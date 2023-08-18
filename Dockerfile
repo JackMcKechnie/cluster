@@ -6,5 +6,6 @@ COPY requirements.txt /tmp
 
 RUN conda install -y pytorch cudatoolkit=11.3 -c pytorch && pip3 install --no-cache-dir -r /tmp/requirements.txt
 
+RUN conda install pytorch==1.12.1 cudatoolkit=11.3 -c pytorch -y
 
 WORKDIR /nfs
