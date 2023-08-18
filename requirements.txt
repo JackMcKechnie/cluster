@@ -9,8 +9,6 @@ gensim
 google-cloud
 gsutil
 requests
-pygaggle
-pyserini
 faiss-cpu
 faiss-gpu
 openai
