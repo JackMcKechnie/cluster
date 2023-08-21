@@ -12,3 +12,5 @@ requests
 faiss-cpu
 faiss-gpu
 openai
+ir_datasets
+python-terrier
