@@ -1,7 +1,7 @@
 # FROM hitt08/ubuntu-py:gpu_cuda11
 FROM nvidia/cuda:12.2.0-runtime-ubuntu20.04
 
-RUN add-apt-repository ppa:deadsnakes/ppa && apt-get install python3.10 && pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
+RUN apt-get install software-properties-common && apt-get update && add-apt-repository ppa:deadsnakes/ppa && apt-get install python3.10 && pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
 
 COPY requirements.txt /tmp
 
