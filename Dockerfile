@@ -26,8 +26,8 @@ ARG PATH="/root/miniconda/bin:${PATH}"
 RUN curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /tmp/Miniconda3-latest-Linux-x86_64.sh && \
 	bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda && rm /tmp/Miniconda3-latest-Linux-x86_64.sh
 
-# RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip gcc python3-dev
-# RUN apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
+RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip gcc python3-dev
+RUN apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
 
