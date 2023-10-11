@@ -1,6 +1,6 @@
 FROM hitt08/ubuntu-py:gpu_cuda11
 
-RUN add-apt-repository ppa:deadsnakes/ppa && apt install python3.10 && pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
+RUN apt install python3.10 && pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
 
 COPY requirements.txt /tmp
 
