@@ -29,7 +29,7 @@ RUN curl https://repo.anaconda.com/miniconda/Miniconda3-py39_23.5.2-0-Linux-x86_
 # RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip gcc python3-dev
 # RUN apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
-RUN pt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip
+RUN apt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip
 RUN pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
 
 ENV TOKENIZERS_PARALLELISM=false
