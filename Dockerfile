@@ -42,8 +42,6 @@ COPY requirements.txt /tmp
 
 RUN conda install -y numpy pytorch cudatoolkit=11.3 -c pytorch && pip3 install --no-cache-dir -r /tmp/requirements.txt
 
-RUN conda install pytorch==1.12.1 cudatoolkit=11.3 -c pytorch -y
-
 WORKDIR /nfs
 
 ENV JAVA_HOME="/nfs/java/jdk-11.0.1"
