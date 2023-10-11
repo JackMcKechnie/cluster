@@ -35,19 +35,6 @@ ENV NLTK_DATA=/app/nltk_data/
 ENV NEURALCOREF_CACHE=/app/neuralcoref/
 RUN pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
 
-
-COPY requirements_basic.txt /tmp
-COPY requirements_extended.txt /tmp
-COPY neuralcoref /root/miniconda/lib/python3.8/dist-packages/neuralcoref
-RUN pip3 install --no-cache-dir -r /tmp/requirements_basic.txt && \
-  	conda install -y pytorch cudatoolkit=11.3 -c pytorch && \
-  	pip3 install --no-cache-dir -r /tmp/requirements_extended.txt && \
-	giveme5w1h-corenlp install && \
-	cd /root/miniconda/lib/python3.8/dist-packages/neuralcoref && pip3 install -r requirements.txt && pip3 install -e .
-
-RUN python3 -m spacy download en_core_web_sm && \
-	python3 -c "import benepar; benepar.download('benepar_en3')" && \
-	python3 -c "import nltk; nltk.download('wordnet','/app/nltk_data'); nltk.download('stopwords','/app/nltk_data')"
 COPY neuralcoref_cache /app/neuralcoref
 
 RUN mkdir /app/SourceSets ; mkdir /app/DocumentSets ; mkdir /app/DocumentSets/ccd ; mkdir /app/DocumentSets/json   ; mkdir /app/sourceCode ; mkdir /app/transformer_models; mkdir /app/DocumentSets/hac-5w1h; mkdir -p /app/DocumentSets/dpp/mat; mkdir -p  /root/miniconda/lib/python3.8/dist-packages/Giveme5W1H/examples/caches/
