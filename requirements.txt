@@ -1,15 +1,4 @@
 wget
 transformers
-sentencepiece
-datasets
-pytorch-lightning==1.6.5
-neptune-client
-wikipedia
-gensim
-google-cloud
-gsutil
-requests
-faiss-cpu
-openai
 ir_datasets
 python-terrier
