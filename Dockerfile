@@ -29,15 +29,7 @@ RUN curl https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64
 RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y --no-install-recommends python3-venv python3-pip gcc python3-dev
 RUN apt-get clean && apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
-
-RUN mkdir -p /app/nltk_data/ /app/neuralcoref/
-ENV NLTK_DATA=/app/nltk_data/
-ENV NEURALCOREF_CACHE=/app/neuralcoref/
 RUN pip3 install -U pip setuptools wheel && pip3 install jupyter -U && pip3 install jupyterlab
-
-COPY neuralcoref_cache /app/neuralcoref
-
-RUN mkdir /app/SourceSets ; mkdir /app/DocumentSets ; mkdir /app/DocumentSets/ccd ; mkdir /app/DocumentSets/json   ; mkdir /app/sourceCode ; mkdir /app/transformer_models; mkdir /app/DocumentSets/hac-5w1h; mkdir -p /app/DocumentSets/dpp/mat; mkdir -p  /root/miniconda/lib/python3.8/dist-packages/Giveme5W1H/examples/caches/
 
 ENV TOKENIZERS_PARALLELISM=false
 
